@@ -47,7 +47,6 @@ startQuiz.addEventListener("click", () => {
 const loadQuiz = async () => {
   const res = await fetch("./data/quiz.json");
   const data = await res.json();
-  quizData = data;
   displayQuiz(data);
 };
 
@@ -57,7 +56,7 @@ const displayQuiz = (data) => {
     quizContainer.innerHTML = "";
     return;
   }
-
+  
   data.forEach((quiz, i) => {
     quizContainer.innerHTML += `<div class="m-3 py-3 px-4 shadow-sm rounded">
   <div class="flex items-center">
